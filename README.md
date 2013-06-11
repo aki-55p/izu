@@ -3,7 +3,7 @@ izu
 
 Introduction
 ------------
-Control LED by web. 
+Control LED by web.  
 Because it was developed in "izu", it is called "izu". 
 
 
