@@ -2,10 +2,10 @@ import processing.serial.*;
 import de.bezier.data.sql.*;  
   
 MySQL mx;  
-public String user     = "hoge";
-public String pass     = "hoge";
-public String database = "hoge";
-public String dbhost = "hoge";
+public String user     = DB_USER;
+public String pass     = DB_PASSWORD;
+public String database = DB_NAME;
+public String dbhost   = DB_HOST;
 
 Serial port;
 
@@ -21,7 +21,7 @@ void setup () {
   mx = new MySQL( this, dbhost, database, user, pass );   
     if( mx.connect() ){  
         // now read it back out  
-        mx.query( "select * from hoge;" );  
+        mx.query( "select * from izuTB;" );  
           
         while (mx.next()){  
             int n = mx.getInt("id");  
@@ -54,7 +54,7 @@ void draw () {
 void fetchData() {
   if( mx.connect() ){  
     // now read it back out  
-    mx.query( "select onoff from hoge where id = 1;" );  
+    mx.query( "select onoff from izuTB  where id = 1;" );  
     
     while (mx.next()){
       onoff = mx.getInt("onoff");
